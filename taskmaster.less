@@ -1,0 +1,58 @@
+
+@highlight: #D3EFE3;
+@light: #88D4B3;
+@midtone: #41B683;
+@dark: #266A4C;
+@text: #184531;
+@standard-border: @text solid 1px;
+@standard-separator: @midtone solid;
+@element-background: white;
+
+body {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    font-family: sans-serif;
+    font-size: 14px;
+    color: @text;
+
+    background: @dark linear-gradient(to bottom, @dark, @light 100%) fixed;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 600px;
+    min-height: 100%;
+
+    background: @element-background;
+    border: @standard-border;
+}
+
+header {
+    position: relative;
+    padding: 20px 15px 15px 15px;
+
+    background: linear-gradient(to bottom, @midtone, @light 100%);
+    border-bottom: @standard-separator 2px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+
+    background: @element-background;
+}
+
+li {
+    position: relative;
+    padding: 15px;
+
+    list-style: none;
+
+    background-color: @highlight;
+    border-bottom: @standard-separator 1px;
+}
