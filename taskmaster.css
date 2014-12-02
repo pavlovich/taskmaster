@@ -1,1 +1,49 @@
-/* CSS declarations go here */
+
+body {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #184531;
+
+    background: #266A4C linear-gradient(to bottom, #266A4C, #88D4B3 100%) fixed;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 600px;
+    min-height: 100%;
+
+    background: white;
+    border: #184531 solid 1px;
+}
+
+header {
+    position: relative;
+    padding: 20px 15px 15px 15px;
+
+    background: #41B683 linear-gradient(to bottom, #41B683, #88D4B3 100%);
+    border-bottom: #41B683 solid 2px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+
+    background: white;
+}
+
+li {
+    position: relative;
+    padding: 15px;
+
+    list-style: none;
+
+    background-color: #D3EFE3;
+    border-bottom: #41B683 solid 1px;
+}
