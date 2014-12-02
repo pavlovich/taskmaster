@@ -4,13 +4,21 @@
 
 <body>
   <div class="container">
-      <header>
-          <h1>Task List</h1>
-      </header>
-      <ul>
+      {{> taskListHeader}}
+      {{> taskList}}
+  </div>
+</body>
+
+<template name="taskListHeader">
+    <header>
+        <h1>Task List</h1>
+    </header>
+</template>
+
+<template name="taskList">
+    <ul>
         <li>Task 1</li>
         <li>Task 2</li>
         <li>Task 3</li>
-      </ul>
-  </div>
-</body>
+    </ul>
+</template>
