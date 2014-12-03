@@ -56,3 +56,22 @@ li {
     background-color: @highlight;
     border-bottom: @standard-separator 1px;
 }
+
+form {
+    margin-bottom: -10px;
+    position: relative;
+}
+
+.new-task {
+    input {
+        box-sizing: border-box;
+        background: transparent;
+        width: 100%;
+        padding: 10px 10px 10px 10px;
+        font-size: 14px;
+
+        &:focus {
+            background-color: @highlight;
+        }
+    }
+}
