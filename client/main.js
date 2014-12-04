@@ -1,5 +1,5 @@
 UI.registerHelper('tasks', function(){
-    return Tasks.find();
+    return Tasks.find({}, {sort: {createdAt: 1}});
 });
 
 Template.body.events({
@@ -9,3 +9,5 @@ Template.body.events({
         return false;
     }
 });
+
+Meteor.subscribe("tasks");
