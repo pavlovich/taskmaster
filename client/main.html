@@ -6,9 +6,15 @@
 </head>
 
 <body>
-  <div class="container" ng-controller="tasksController">
+  <div class="container">
       {{> taskListHeader}}
       {{> taskList}}
       {{> newTask}}
   </div>
+
+    <div class="container" ng-controller="tasksController">
+        <form class="new-task" ng-if="loggedIn()">
+            <input type="text" name="text" placeholder="Type here to add new tasks" />
+        </form>
+    </div>
 </body>

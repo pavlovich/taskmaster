@@ -1,5 +1,10 @@
 angular.module('taskMaster', ['angular-meteor'])
     .controller('tasksController', ['$scope', function ($scope) {
+
+        $scope.loggedIn = function () {
+            return Meteor.userId()
+        };
+
     }]);
 
 UI.registerHelper('tasks', function(){
