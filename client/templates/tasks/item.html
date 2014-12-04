@@ -11,6 +11,6 @@
         {{/if}}
         {{name}}
         {{#if email}}<span class="email">{{email}}</span>{{/if}}
-        <button class="delete-button">&times;</button>
+        {{#if canDelete}}<button class="delete-button">&times;</button>{{/if}}
     </li>
 </template>

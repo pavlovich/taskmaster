@@ -11,5 +11,8 @@ Template.taskItem.events({
 Template.taskItem.helpers({
     isOwner: function () {
         return this.owner == null || this.owner === Meteor.userId();
+    },
+    canDelete: function () {
+        return !this.private || !this.owner || this.owner === Meteor.userId();
     }
 });
