@@ -54,8 +54,22 @@ li {
 
     list-style: none;
 
-    background-color: @highlight;
+    background: @element-background;
     border-bottom: @standard-separator 1px;
+
+    &.private {
+        background: @highlight;
+        border-color: #ddd;
+    }
+    &.checked {
+        background: @midtone;
+        border-bottom: @text 1px solid;
+        .text {
+            text-decoration: line-through;
+            color: @dark;
+        }
+
+    }
 
     .toggle-private {
         height: auto;
