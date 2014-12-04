@@ -1,6 +1,7 @@
 <template name="newTask">
-    <form class="new-task">
-        <input type="text" name="text" placeholder="Type here to add new tasks" />
-    </form>
+    {{#if currentUser}}
+        <form class="new-task">
+            <input type="text" name="text" placeholder="Type here to add new tasks" />
+        </form>
+    {{/if}}
 </template>
-
