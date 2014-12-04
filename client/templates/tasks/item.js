@@ -1,6 +1,6 @@
 
 Template.taskItem.events({
     "click .delete-button": function () {
-        Tasks.remove(this._id);
+        Meteor.call('deleteTask', this._id);
     }
 });
