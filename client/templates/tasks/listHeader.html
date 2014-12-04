@@ -1,5 +1,11 @@
 <template name="taskListHeader">
     <header>
+        <div class="filter">
+            <label class="hide-completed">
+                <input type="checkbox" checked="{{hideCompleted}}"/>
+                Hide Completed Tasks
+            </label>
+        </div>
         <h1>Task List</h1>
         <div class="login-control">
             {{#if currentUser}}

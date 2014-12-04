@@ -1,5 +1,9 @@
 UI.registerHelper('tasks', function(){
-    return Tasks.find({}, {sort: {createdAt: 1}});
+    if (Session.get("hideCompleted")) {
+        return Tasks.find({checked: {$ne: true}}, {sort: {createdAt: -1}});
+    } else {
+        return Tasks.find({}, {sort: {createdAt: -1}});
+    }
 });
 
 Template.body.events({
@@ -7,6 +11,9 @@ Template.body.events({
         Meteor.call('addTask', event.target.text.value)
         event.target.text.value = "";
         return false;
+    },
+    "change .hide-completed input": function (event) {
+        Session.set("hideCompleted", event.target.checked);
     }
 });
 
