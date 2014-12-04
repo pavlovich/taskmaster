@@ -1,6 +1,7 @@
 <template name="taskItem">
     <li>
         {{name}}
+        {{#if email}}<span class="email">{{email}}</span>{{/if}}
         <button class="delete-button">&times;</button>
     </li>
 </template>
