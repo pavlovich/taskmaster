@@ -1,3 +1,7 @@
+angular.module('taskMaster', ['angular-meteor'])
+    .controller('tasksController', ['$scope', function ($scope) {
+    }]);
+
 UI.registerHelper('tasks', function(){
     if (Session.get("hideCompleted")) {
         return Tasks.find({checked: {$ne: true}}, {sort: {createdAt: -1}});
@@ -18,3 +22,7 @@ Template.body.events({
 });
 
 Meteor.subscribe("tasks");
+
+Meteor.startup(function () {
+    angular.bootstrap(document, ['taskMaster']);
+});
