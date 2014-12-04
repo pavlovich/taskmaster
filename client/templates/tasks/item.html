@@ -1,5 +1,14 @@
 <template name="taskItem">
     <li>
+        {{#if isOwner}}
+            <button class="toggle-private">
+                {{#if private}}
+                    Private
+                {{else}}
+                    Public
+                {{/if}}
+            </button>
+        {{/if}}
         {{name}}
         {{#if email}}<span class="email">{{email}}</span>{{/if}}
         <button class="delete-button">&times;</button>
