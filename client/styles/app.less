@@ -8,13 +8,6 @@
 @element-background: white;
 
 body {
-  position: absolute;
-
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
   font-family: sans-serif;
   font-size: 14px;
   color: @text;
@@ -23,15 +16,13 @@ body {
 }
 
 .container {
-  margin: 0 auto;
-  max-width: 600px;
-  min-height: 100%;
-
   background: lighten(@highlight, 8%);
   border: @standard-border;
+  height: 100%;
 }
 
 header {
+  height: 100%;
   position: relative;
   padding: 1px 1px 1px 10px;
 
@@ -51,8 +42,7 @@ ul {
   background: @element-background;
 }
 
-li {
-  position: relative;
+.my-list {
   padding: 15px;
   height: 22px;
 
@@ -83,17 +73,14 @@ li {
   }
 }
 
-form {
-  margin-bottom: -10px;
-  position: relative;
-}
-
 .new-task {
   input {
-    box-sizing: border-box;
-    background: transparent;
+    background: lighten(@highlight, 8%);
     width: 100%;
-    padding: 10px 10px 10px 10px;
+    height: 100%;
+    padding: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     font-size: 14px;
     border-top: @midtone 2px solid;
     border-bottom: @midtone 2px solid;
@@ -107,7 +94,6 @@ form {
 }
 
 .delete-button {
-  position: relative;
   margin-top: -4px;
   float: right;
 
@@ -158,4 +144,8 @@ form {
     border: none;
     list-style: square;
   }
+}
+
+.the-list {
+  height: 100%;
 }

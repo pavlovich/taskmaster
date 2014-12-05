@@ -6,9 +6,17 @@
 </head>
 
 <body>
-  <div class="container">
-      {{> taskListHeader}}
-      {{> taskList}}
-      {{> newTask}}
-  </div>
+    {{#famousContext class="container" id="mainCtx"}}
+        {{#GridLayout dimensions="[1,3]"}}
+            {{#Surface size="[undefined, 75]"}}
+                {{> taskListHeader}}
+            {{/Surface}}
+            {{#Surface size="[undefined, 600]"}}
+                {{> taskList}}
+            {{/Surface}}
+            {{#Surface size="[undefined, 0]"}}
+                {{> newTask}}
+            {{/Surface}}
+        {{/GridLayout}}
+    {{/famousContext}}
 </body>

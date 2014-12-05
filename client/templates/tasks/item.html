@@ -1,5 +1,5 @@
 <template name="taskItem">
-    <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
+    <div class="my-list {{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
         <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
 
         {{#if isOwner}}
@@ -18,6 +18,6 @@
         {{#if canDelete}}
             <button class="delete-button">&times;</button>
         {{/if}}
-    </li>
+    </div>
 </template>
 

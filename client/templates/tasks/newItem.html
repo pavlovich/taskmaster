@@ -1,7 +1,11 @@
 <template name="newTask">
+
     {{#if currentUser}}
+        <div>
         <form class="new-task">
             <input type="text" name="text" placeholder="Type here to add new tasks" />
         </form>
+        </div>
     {{/if}}
+
 </template>
