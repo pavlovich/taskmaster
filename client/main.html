@@ -13,8 +13,8 @@
   </div>
 
     <div class="container" ng-controller="tasksController">
-        <form class="new-task" ng-if="loggedIn()">
-            <input type="text" name="text" placeholder="Type here to add new tasks" />
+        <form class="new-task" ng-if="loggedIn()" ng-submit="addTask()">
+            <input type="text" name="text" placeholder="Type here to add new tasks" ng-model="model.newTodoText"/>
         </form>
     </div>
 </body>

@@ -1,6 +1,13 @@
 angular.module('taskMaster', ['angular-meteor'])
     .controller('tasksController', ['$scope', function ($scope) {
 
+        $scope.model = {newTodoText: ""};
+
+        $scope.addTask = function () {
+            Meteor.call("addTask", $scope.model.newTodoText);
+            $scope.model.newTodoText = ""
+        };
+
         $scope.loggedIn = function () {
             return Meteor.userId()
         };
@@ -16,7 +23,7 @@ UI.registerHelper('tasks', function(){
 });
 
 Template.body.events({
-    "submit .new-task": function (event) {
+    "submit .new-taska": function (event) {
         Meteor.call('addTask', event.target.text.value)
         event.target.text.value = "";
         return false;
