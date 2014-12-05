@@ -18,15 +18,9 @@
             <li ng-class="{checked: (task.checked == true), private: (task.private)}" ng-repeat="task in tasks | orderBy:'createdAt':true">
                 <input type="checkbox" ng-model="task.checked" class="toggle-checked" ng-change="toggleChecked(task)"/>
 
-                {{#if isOwner}}
-                    <button class="toggle-private">
-                        {{#if private}}
-                            Private
-                        {{else}}
-                            Public
-                        {{/if}}
-                    </button>
-                {{/if}}
+                <button class="toggle-private" ng-if="isOwner(task)" ng-click="togglePrivate(task)">
+                    [[ privateStatus(task) ]]
+                </button>
 
                 <span class="text">[[task.name]]</span>
                 <span class="email" ng-if="task.email">[[task.email]]</span>

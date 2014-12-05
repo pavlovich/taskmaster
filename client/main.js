@@ -19,6 +19,18 @@ angular.module('taskMaster', ['angular-meteor'])
             return false;
         };
 
+        $scope.togglePrivate = function (task) {
+            Meteor.call("setPrivate", task._id, !task.private)
+        };
+
+        $scope.privateStatus = function (task) {
+            return task.private ? "Private" : "Public"
+        };
+
+        $scope.isOwner = function (task) {
+            return task.owner === Meteor.userId()
+        };
+
         $scope.loggedIn = function () {
             return Meteor.userId()
         };
