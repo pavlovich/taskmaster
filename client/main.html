@@ -27,11 +27,9 @@
                         {{/if}}
                     </button>
                 {{/if}}
-                <span class="text">{{name}}</span>
-                {{#if email}}
-                    <span class="email">{{email}}</span>
-                {{/if}}
 
+                <span class="text">[[task.name]]</span>
+                <span class="email" ng-if="task.email">[[task.email]]</span>
                 <button class="delete-button" ng-click="deleteTask(task)">&times;</button>
 
             </li>
