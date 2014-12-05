@@ -16,7 +16,7 @@
 
         <ul>
             <li ng-class="{checked: (task.checked == true), private: (task.private)}" ng-repeat="task in tasks">
-                <input type="checkbox" ng-model="task.checked" class="toggle-checked"/>
+                <input type="checkbox" ng-model="task.checked" class="toggle-checked" ng-change="toggleChecked(task)"/>
 
                 {{#if isOwner}}
                     <button class="toggle-private">

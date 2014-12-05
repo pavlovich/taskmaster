@@ -1,7 +1,7 @@
 angular.module('taskMaster', ['angular-meteor'])
     .controller('tasksController', ['$scope', '$collection', function ($scope, $collection) {
 
-        $collection(Tasks).bind($scope, 'tasks', true, true, false);
+        $collection(Tasks).bind($scope, 'tasks');
 
         $scope.model = {newTodoText: ""};
 
@@ -12,6 +12,11 @@ angular.module('taskMaster', ['angular-meteor'])
 
         $scope.deleteTask = function (task) {
             Meteor.call("deleteTask", task._id)
+        };
+
+        $scope.toggleChecked = function (task) {
+            Meteor.call("setChecked", task._id, task.checked);
+            return false;
         };
 
         $scope.loggedIn = function () {
