@@ -13,9 +13,23 @@
   </div>
 
     <div class="container" ng-controller="tasksController">
+        <header>
+            <div class="filter">
+                <label class="hide-completed">
+                    <input type="checkbox" ng-model="hideCompleted"/>
+                    Hide Completed Tasks
+                </label>
+            </div>
+            <h1>Task List</h1>
+
+            <div class="login-control">
+                <span class="welcome" ng-if="loggedIn()">Welcome</span>
+                {{> loginButtons align="right"}}
+            </div>
+        </header>
 
         <ul>
-            <li ng-class="{checked: (task.checked == true), private: (task.private)}" ng-repeat="task in tasks | orderBy:'createdAt':true">
+            <li ng-class="{checked: (task.checked == true), private: (task.private)}" ng-repeat="task in filteredTasks() | orderBy:'createdAt':true">
                 <input type="checkbox" ng-model="task.checked" class="toggle-checked" ng-change="toggleChecked(task)"/>
 
                 <button class="toggle-private" ng-if="isOwner(task)" ng-click="togglePrivate(task)">

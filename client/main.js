@@ -1,9 +1,19 @@
 angular.module('taskMaster', ['angular-meteor'])
     .controller('tasksController', ['$scope', '$collection', function ($scope, $collection) {
 
-        $collection(Tasks).bind($scope, 'tasks');
+        $collection(Tasks).bind($scope, 'tasks', true, true);
 
         $scope.model = {newTodoText: ""};
+
+        $scope.filteredTasks = function () {
+            if ($scope.hideCompleted) {
+                return _.reject($scope.tasks, function (task) {
+                    return task.checked
+                })
+            } else {
+                return $scope.tasks
+            }
+        };
 
         $scope.addTask = function () {
             Meteor.call("addTask", $scope.model.newTodoText);
