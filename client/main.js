@@ -45,6 +45,12 @@ angular.module('taskMaster', ['angular-meteor'])
             return Meteor.userId()
         };
 
+        $scope.incompleteCount = function () {
+            return _.filter($scope.tasks, function (task) {
+                return !(task.checked)
+            }).length
+        };
+
     }]);
 
 Meteor.subscribe("tasks");
