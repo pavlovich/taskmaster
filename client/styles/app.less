@@ -6,6 +6,7 @@
 @standard-border: @text solid 1px;
 @standard-separator: @midtone solid;
 @element-background: white;
+@standard-font-size: 14px;
 
 body {
   position: absolute;
@@ -16,7 +17,7 @@ body {
   right: 0;
 
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: @standard-font-size;
   color: @text;
 
   background: @dark linear-gradient(to bottom, @dark, @light 100%) fixed;
@@ -99,7 +100,7 @@ form {
     background: transparent;
     width: 100%;
     padding: 10px 10px 10px 10px;
-    font-size: 14px;
+    font-size: 1@standard-font-size;
     border-top: @midtone 2px solid;
     border-bottom: @midtone 2px solid;
     border-left: none;
@@ -117,7 +118,7 @@ form {
   float: right;
 
   font-weight: bold;
-  font-size: 14px;
+  font-size: @standard-font-size;
 
   background: none;
   border: none;
@@ -162,5 +163,63 @@ form {
     height: auto;
     border: none;
     list-style: square;
+  }
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+  body {
+    font-size: @standard-font-size * 0.25;
+  }
+
+  header {
+    font-size: @standard-font-size * 0.6;
+    height: 44px;
+    .open-task-count {
+      top: 17px;
+      margin-right: 3px;
+    }
+    input {
+      height: 10px;
+      margin-top: 2px;
+    }
+    .filter {
+      margin-right: 3px;
+    }
+    #login-buttons {
+      margin-right: 3px;
+    }
+  }
+
+  .container {
+    width: 100%;
+
+    li {
+      height: 32px;
+      padding: 0px;
+      margin: 0px !important;
+      input {
+        height: 10px;
+        margin: 0px;
+      }
+      .toggle-checked {
+        padding: 0px;
+        margin-left: 2px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+      }
+      button.toggle-private {
+        font-size: @standard-font-size * 0.25;
+        width: 30px;
+        margin-top: 0px;
+        margin-bottom: 5px;
+        padding: 0px;
+      }
+      .delete-button {
+        margin-right: 3px;
+        margin-top: 3px;
+      }
+    }
   }
 }
