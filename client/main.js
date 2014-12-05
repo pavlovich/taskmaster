@@ -1,11 +1,17 @@
 angular.module('taskMaster', ['angular-meteor'])
-    .controller('tasksController', ['$scope', function ($scope) {
+    .controller('tasksController', ['$scope', '$collection', function ($scope, $collection) {
+
+        $collection(Tasks).bind($scope, 'tasks', true, true, false);
 
         $scope.model = {newTodoText: ""};
 
         $scope.addTask = function () {
             Meteor.call("addTask", $scope.model.newTodoText);
             $scope.model.newTodoText = ""
+        };
+
+        $scope.deleteTask = function (task) {
+            Meteor.call("deleteTask", task._id)
         };
 
         $scope.loggedIn = function () {

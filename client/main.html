@@ -13,6 +13,30 @@
   </div>
 
     <div class="container" ng-controller="tasksController">
+
+        <ul>
+            <li ng-class="{checked: (task.checked == true), private: (task.private)}" ng-repeat="task in tasks">
+                <input type="checkbox" ng-model="task.checked" class="toggle-checked"/>
+
+                {{#if isOwner}}
+                    <button class="toggle-private">
+                        {{#if private}}
+                            Private
+                        {{else}}
+                            Public
+                        {{/if}}
+                    </button>
+                {{/if}}
+                <span class="text">{{name}}</span>
+                {{#if email}}
+                    <span class="email">{{email}}</span>
+                {{/if}}
+
+                <button class="delete-button" ng-click="deleteTask(task)">&times;</button>
+
+            </li>
+        </ul>
+
         <form class="new-task" ng-if="loggedIn()" ng-submit="addTask()">
             <input type="text" name="text" placeholder="Type here to add new tasks" ng-model="model.newTodoText"/>
         </form>
