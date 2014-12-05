@@ -1,4 +1,9 @@
-angular.module('taskMaster', ['angular-meteor'])
+angular.module('taskMaster', ['angular-meteor', 'famous.angular'])
+    .controller('mainController', ['$scope', function($scope){
+        $scope.myGridLayoutOptions = {
+            dimensions: [1,1]
+        };
+    }])
     .controller('tasksController', ['$scope', '$collection', function ($scope, $collection) {
 
         $collection(Tasks).bind($scope, 'tasks', true, true);

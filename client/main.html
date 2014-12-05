@@ -6,6 +6,9 @@
 </head>
 
 <body>
+    <fa-app ng-controller="mainController" id="app">
+        <fa-grid-layout fa-options="myGridLayoutOptions">
+            <fa-surface>
     <div class="container" ng-controller="tasksController">
         <header>
             <div class="filter">
@@ -41,4 +44,7 @@
             <input type="text" name="text" placeholder="Type here to add new tasks" ng-model="model.newTodoText"/>
         </form>
     </div>
+            </fa-surface>
+            </fa-grid-layout>
+    </fa-app>
 </body>
